@@ -12,6 +12,9 @@ defmodule PandaApi.Application do
       supervisor(PandaApiWeb.Endpoint, []),
       # Start your own worker by calling: PandaApi.Worker.start_link(arg1, arg2, arg3)
       # worker(PandaApi.Worker, [arg1, arg2, arg3]),
+      # Start the Facebook.Token worker
+      worker(PandaApi.FacebookToken, []),
+      worker(PandaApi.Facebook.Places, [])
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
