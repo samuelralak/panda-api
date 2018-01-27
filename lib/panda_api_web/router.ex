@@ -19,8 +19,9 @@ defmodule PandaApiWeb.Router do
     get "/", PageController, :index
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", PandaApiWeb do
-  #   pipe_through :api
-  # end
+  scope "/api", PandaApiWeb do
+    pipe_through :api
+
+    get "/search", SearchController, :index
+  end
 end
