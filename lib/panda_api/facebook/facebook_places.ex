@@ -2,7 +2,7 @@ defmodule PandaApi.Facebook.Places do
 	use GenServer
 
 	@name FBP
-	@fields ~s(name,location,category_list)
+	@fields ~s(name,location,category_list,about,description,engagement,hours,is_always_open,is_permanently_closed,link,phone,photos,single_line_address,website,picture,cover)
 
 
 	def start_link(opts \\ []) do
