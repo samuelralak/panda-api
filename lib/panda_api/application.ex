@@ -14,7 +14,9 @@ defmodule PandaApi.Application do
       # worker(PandaApi.Worker, [arg1, arg2, arg3]),
       # Start the Facebook.Token worker
       worker(PandaApi.FacebookToken, []),
-      worker(PandaApi.Facebook.Places, [])
+      worker(PandaApi.WimtToken, []),
+      worker(PandaApi.Facebook.Places, []),
+      worker(PandaApi.Wimt.Journeys, [])
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

@@ -5,6 +5,7 @@ defmodule PandaApiWeb.SearchController do
 
 	def index(conn, %{ "latitude" => latitude, "longitude" => longitude }) do
 		results = Places.search("#{latitude},#{longitude}", "10000")
-		render conn, "index.json", results: results
+		current_location = [longitude, latitude]
+		render conn, "index.json", results: results, location: current_location
 	end
 end

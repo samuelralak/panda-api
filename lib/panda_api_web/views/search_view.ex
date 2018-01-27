@@ -1,8 +1,11 @@
 defmodule PandaApiWeb.SearchView do
 	use PandaApiWeb, :view
 
-	def render("index.json", %{ results: results }) do
-		render_many(results, __MODULE__, "search.json")
+	def render("index.json", %{ results: results, location: location }) do
+		%{
+			current_location: location,
+			data: render_many(results, __MODULE__, "search.json")
+		}
 	end
 
 	def render("search.json", %{ search: search }) do
