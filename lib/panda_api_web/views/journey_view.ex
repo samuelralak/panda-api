@@ -19,7 +19,7 @@ defmodule PandaApiWeb.JourneyView do
 
 	defp format_leg(leg) do
 		%{
-			recomendend: leg_recommendation(leg["type"], leg["distance"]["value"]),
+			recommended: leg_recommendation(leg["type"], leg["distance"]["value"]),
 			directions: format_directions(leg["directions"]),
 			fare: format_fare(leg["fare"]),
 			stage: get_stage(leg["line"])
