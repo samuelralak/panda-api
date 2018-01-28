@@ -5,7 +5,7 @@ defmodule PandaApi.Wimt.Journeys do
 	alias PandaApi.WimtToken
 
 	@name WIMTJ
-	@maxItineraries 5
+	@maxItineraries 1
 
 
 	def start_link(opts \\ []) do
@@ -17,8 +17,8 @@ defmodule PandaApi.Wimt.Journeys do
 	end
 
 	def handle_call({:get_journey, { origin, destination }}, _from, state) do
-		IO.inspect journey_post_req(origin, destination)
-		{ :reply, %{}, state }
+		{:ok, results} = journey_post_req(origin, destination).body
+		{ :reply, results, state }
 	end
 
 	def init(:ok) do

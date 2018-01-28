@@ -22,6 +22,7 @@ defmodule PandaApiWeb.Router do
   scope "/api", PandaApiWeb do
     pipe_through :api
 
-    get "/search", SearchController, :index
+    get "/search",  SearchController,  :index
+    post "/journey", JourneyController, :create
   end
 end
